@@ -27,3 +27,7 @@ class Video < ActiveRecord::Base
   #   end
   # end
 end
+
+
+
+Video.all.group('title').count
