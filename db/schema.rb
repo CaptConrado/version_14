@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140323010658) do
+ActiveRecord::Schema.define(version: 20140323012458) do
 
   create_table "videos", force: true do |t|
     t.string   "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140323010658) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "views"
+    t.boolean  "dead"
   end
 
 end
