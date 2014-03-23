@@ -1,4 +1,7 @@
 class Video < ActiveRecord::Base
+  self.primary_key = "ytube_id"
+  has_and_belongs_to_many :reports
+
 
   def self.import(file)
     CSV.foreach(file.path, :headers => true, :encoding => 'windows-1251:utf-8') do |row|

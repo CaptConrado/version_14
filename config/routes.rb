@@ -1,5 +1,7 @@
 VersionFourteen::Application.routes.draw do
   
+  resources :reports
+
   resources :videos do
     collection { post :import }  
   end
