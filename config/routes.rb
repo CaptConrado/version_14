@@ -1,5 +1,7 @@
 VersionFourteen::Application.routes.draw do
   
+  resources :claims
+
   resources :reports
 
   resources :videos do
