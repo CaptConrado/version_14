@@ -3,6 +3,22 @@ class Video < ActiveRecord::Base
   has_and_belongs_to_many :reports
   has_many :claims
 
+  def fee
+    BigDecimal.new(revenue)
+  end
+
+
+  
+
+
+
+
+
+
+
+
+
+
 
   def self.import(file)
     CSV.foreach(file.path, :headers => true, :encoding => 'windows-1251:utf-8') do |row|
