@@ -4,19 +4,12 @@ class Report < ActiveRecord::Base
   # belongs_to :video
   # has_many   :line_items
   # before_save :make_items
-
+  
   def tester
     Video.all[0..29]
   end
 
-
-  def rev
-    poo = Video.all 
-    poo.group(:ytube_id).revenue
-
-
-    # Video.all.group('ytube_id').revenue
-  end
+  
   # def fee 
   #   a = amount
   #   if video.special?
