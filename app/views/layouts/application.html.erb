@@ -9,12 +9,17 @@
   <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
-<%= render 'layouts/header' %>
-<%= yield %>
+	<%= render 'layouts/header' %>
+	<%= render 'layouts/nav' %>
+	<div class="view-container">
+		<section data-ng-view="" id="content" class="animate-fade-up">
+			<%= yield %>
+		</section>
+	</div>
 
-<script src="/scripts/vendor.js"></script>
-<script src="/scripts/ui.js"></script>
-<script src="/scripts/app.js"></script>
+	<script src="/scripts/vendor.js"></script>
+	<script src="/scripts/ui.js"></script>
+	<script src="/scripts/app.js"></script>
 
 </body>
 </html>
