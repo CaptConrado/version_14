@@ -1,12 +1,12 @@
 class Report < ActiveRecord::Base
-  has_and_belongs_to_many :videos, -> { where dead: false },
-                  foreign_key: 'ytube_id'
+  has_many :videos, foreign_key: 'ytube_id'
   # belongs_to :video
   # has_many   :line_items
   # before_save :make_items
+  # -> { where dead: false },
   
   def list
-    videos
+    Video.all[0..29]
   end
 
   

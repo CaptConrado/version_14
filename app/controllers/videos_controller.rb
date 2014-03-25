@@ -4,7 +4,8 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Video.all
+    # @videos = Video.all
+    @videos = Video.top_vids[0..29]
   end
 
   # GET /videos/1

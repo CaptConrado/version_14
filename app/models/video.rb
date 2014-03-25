@@ -1,11 +1,13 @@
 class Video < ActiveRecord::Base
   self.primary_key = "ytube_id"
-  has_and_belongs_to_many :reports
   has_many :claims
+
+  scope :top_vids, -> {where(dead: false)}
 
   def fee
     BigDecimal.new(revenue)
   end
+
 
 
   
