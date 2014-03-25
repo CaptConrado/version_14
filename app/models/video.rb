@@ -15,18 +15,6 @@ class Video < ActiveRecord::Base
 
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
   def self.import(file)
     CSV.foreach(file.path, :headers => true, :encoding => 'windows-1251:utf-8') do |row|
       money = row[2].gsub(/\,/,"").gsub(/\$/,"").gsub(/ /,"")

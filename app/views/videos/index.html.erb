@@ -1,4 +1,529 @@
-<h1>Listing videos</h1>
+<body data-ng-app="app" id="app" data-custom-background="" data-off-canvas-nav="" class="ng-scope" style="">
+        <!--[if lt IE 9]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div data-ng-controller="AppCtrl" class="ng-scope">
+            <div data-ng-hide="isSpecificPage()" class="">
+
+    <!-- Logo -->
+    <div class="logo bg-primary">
+        <a href="#/">
+            <span class="glyphicon glyphicon-fire logo-icon"></span><span>iFlat</span>
+        </a>
+    </div>
+
+    <!-- needs to be put after logo to make it working-->
+    <div class="menu-button" toggle-off-canvas="">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+
+    <div class="top-nav">
+        <ul class="nav-left list-unstyled">
+            <li class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-comment-o"></i>
+                    <span class="badge badge-success">2</span>
+                </a>
+                <div class="dropdown-menu panel panel-default">
+                    <div class="panel-heading">
+                        You have 2 messages.
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="round-icon sm bg-info"><i class="fa fa-comment-o"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">Jane sent you a message</span>
+                                    <span class="text-muted">3 hours ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="round-icon sm bg-danger"><i class="fa fa-comment-o"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">Lynda sent you a mail</span>
+                                    <span class="text-muted">9 hours ago</span>
+                                </div>
+                            </a>
+                        </li>                       
+                    </ul>
+                    <div class="panel-footer">
+                        <a href="javascript:;">Show all messages.</a>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge badge-info">3</span>
+                </a>
+                <div class="dropdown-menu panel panel-default">
+                    <div class="panel-heading">
+                        You have 3 mails.
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="round-icon sm bg-warning"><i class="fa fa-envelope-o"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">Lisa sent you a mail</span>
+                                    <span class="text-muted block">2min ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="round-icon sm bg-info"><i class="fa fa-envelope-o"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">Jane sent you a mail</span>
+                                    <span class="text-muted">3 hours ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="round-icon sm bg-success"><i class="fa fa-envelope-o"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">Lynda sent you a mail</span>
+                                    <span class="text-muted">9 hours ago</span>
+                                </div>
+                            </a>
+                        </li>                       
+                    </ul>
+                    <div class="panel-footer">
+                        <a href="javascript:;">Show all mails.</a>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-bell-o nav-icon"></i>
+                    <span class="badge badge-warning">3</span>
+                </a>
+                <div class="dropdown-menu panel panel-default">
+                    <div class="panel-heading">
+                        You have 3 notifications.
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="round-icon sm bg-success"><i class="fa fa-bell-o"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">New tasks needs to be done</span>
+                                    <span class="text-muted block">2min ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="round-icon sm bg-info"><i class="fa fa-bell-o"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">Change your password</span>
+                                    <span class="text-muted">3 hours ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="round-icon sm bg-danger"><i class="fa fa-bell-o"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">New feature added</span>
+                                    <span class="text-muted">9 hours ago</span>
+                                </div>
+                            </a>
+                        </li>                       
+                    </ul>
+                    <div class="panel-footer">
+                        <a href="javascript:;">Show all notifications.</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="nav-right pull-right list-unstyled">
+            <li class="dropdown langs text-normal ng-scope" data-ng-controller="LangCtrl">
+                <a href="javascript:;" class="dropdown-toggle ng-binding" data-toggle="dropdown">
+                    English
+                </a>
+                <ul class="dropdown-menu pull-right list-langs" role="menu">
+                    <li data-ng-show="lang !== 'English' " class="ng-hide">
+                        <a href="javascript:;" data-ng-click="setLang('English')"><div class="flag flags-american"></div> English</a></li>
+                    <li data-ng-show="lang !== 'Español' " class="">
+                        <a href="javascript:;" data-ng-click="setLang('Español')"><div class="flag flags-spain"></div> Español</a></li>
+                    <li data-ng-show="lang !== '日本語' " class="">
+                        <a href="javascript:;" data-ng-click="setLang('日本語')"><div class="flag flags-japan"></div> 日本語</a></li>
+                    <li data-ng-show="lang !== '中文' " class="">
+                        <a href="javascript:;" data-ng-click="setLang('中文')"><div class="flag flags-china"></div> 中文</a></li>
+                    <li data-ng-show="lang !== 'Deutsch' " class="">
+                        <a href="javascript:;" data-ng-click="setLang('Deutsch')"><div class="flag flags-german"></div> Deutsch</a></li>
+                    <li data-ng-show="lang !== 'français' " class="">
+                        <a href="javascript:;" data-ng-click="setLang('français')"><div class="flag flags-france"></div> français</a></li>
+                    <li data-ng-show="lang !== 'Italiano' " class="">
+                        <a href="javascript:;" data-ng-click="setLang('Italiano')"><div class="flag flags-italy"></div> Italiano</a></li>
+                    <li data-ng-show="lang !== 'Portugal' " class="">
+                        <a href="javascript:;" data-ng-click="setLang('Portugal')"><div class="flag flags-portugal"></div> Portugal</a></li>
+                    <li data-ng-show="lang !== 'Русский язык' " class="">
+                        <a href="javascript:;" data-ng-click="setLang('Русский язык')"><div class="flag flags-russia"></div> Русский язык</a></li>
+                    <li data-ng-show="lang !== '한국어' " class="">
+                        <a href="javascript:;" data-ng-click="setLang('한국어')"><div class="flag flags-korea"></div> 한국어</a></li>
+                </ul>
+            </li>
+<!--             <li class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="fa fa-magic nav-icon"></span>
+                </a>
+                <ul class="dropdown-menu pull-right color-switch" data-ui-color-switch>
+                    <li><a href="javascript:;" class="color-option color-some_color" data-style="some_color"></a></li>
+                </ul>
+            </li> -->
+            <li class="dropdown text-normal nav-profile">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="images/g1.jpg" alt="" class="img-circle img30_30">
+                    <span class="hidden-xs">
+                        <span data-i18n="John Doe">John Doe</span>
+                    </span>
+                </a>
+                <ul class="dropdown-menu pull-right">
+                    <li>
+                        <a href="#/pages/profile">
+                            <i class="fa fa-user"></i>
+                            <span data-i18n="My Profile">My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/tasks">
+                            <i class="fa fa-check"></i>
+                            <span data-i18n="My Tasks">My Tasks</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/pages/signin">
+                            <i class="fa fa-sign-out"></i>
+                            <span data-i18n="Log Out">Log Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>        
+    </div>
+
+</header>
+</section>
+
+                <!-- ngInclude: 'views/nav.html' --><aside data-ng-include=" 'views/nav.html' " id="nav-container" class="ng-scope"><div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><ul id="nav" data-ng-controller="NavCtrl" data-collapse-nav="" data-slim-scroll="" data-highlight-active="" class="ng-scope" style="overflow: hidden; width: auto; height: 100%;">
+    <li class="active"><a href="#/dashboard"> <i class="fa fa-dashboard"></i><span data-i18n="Dashboard">Dashboard</span> </a></li>
+    <li class="">
+        <a href="#/ui"><i class="fa fa-magic"></i><span data-i18n="UI Kit">UI Kit</span></a>
+        <ul style="display: none;">
+            <li><a href="#/ui/buttons"><i class="fa fa-caret-right"></i><span data-i18n="Buttons">Buttons</span></a></li>
+            <li class=""><a href="#/ui/typography"><i class="fa fa-caret-right"></i><span data-i18n="Typography">Typography</span></a></li>
+            <li class=""><a href="#/ui/widgets"><i class="fa fa-caret-right"></i><span data-i18n="Widgets">Widgets</span> <span class="badge badge-success">11</span></a></li>
+            <li class=""><a href="#/ui/grids"><i class="fa fa-caret-right"></i><span data-i18n="Grids">Grids</span></a></li>
+            <li class=""><a href="#/ui/icons"><i class="fa fa-caret-right"></i><span data-i18n="Icons">Icons</span></a></li>
+            <li class=""><a href="#/ui/components"><i class="fa fa-caret-right"></i><span data-i18n="Components">Components</span> <span class="badge badge-info">14</span></a></li>
+        </ul>
+    <i class="fa fa-caret-right icon-has-ul"></i></li>
+    <li class="">
+        <a href="#/table"><i class="fa fa-table"></i><span data-i18n="Tables">Tables</span></a>
+        <ul style="display: none;">
+            <li class=""><a href="#/tables/static"><i class="fa fa-caret-right"></i><span data-i18n="Static Tables">Static Tables</span></a></li>
+            <li class=""><a href="#/tables/responsive"><i class="fa fa-caret-right"></i><span data-i18n="Responsive Tables">Responsive Tables</span></a></li>
+            <li class=""><a href="#/tables/dynamic"><i class="fa fa-caret-right"></i><span data-i18n="Dynamic Tables">Dynamic Tables</span></a></li>
+        </ul>
+    <i class="fa fa-caret-right icon-has-ul"></i></li>
+    <li>
+        <a href="#/form"><i class="fa fa-pencil"></i><span data-i18n="Forms">Forms</span></a>
+        <ul class="sub-nav" style="">
+            <li><a href="#/forms/elements"><i class="fa fa-caret-right"></i><span data-i18n="Form Elements">Form Elements</span> <span class="badge badge-warning">11</span></a></li>
+            <li><a href="#/forms/validation"><i class="fa fa-caret-right"></i><span data-i18n="Form Validation">Form Validation</span></a></li>
+            <li><a href="#/forms/wizard"><i class="fa fa-caret-right"></i><span data-i18n="Form Wizard">Form Wizard</span></a></li>
+            <li><a href="#/forms/layouts"><i class="fa fa-caret-right"></i><span data-i18n="Form Layouts">Form Layouts</span></a></li>
+        </ul>
+    <i class="fa fa-caret-right icon-has-ul"></i></li>
+    <li class="nav-task">
+        <a href="#/tasks">
+            <i class="fa fa-tasks"></i><span data-i18n="Tasks">Tasks</span>
+            <span class="badge badge-danger main-badge ng-binding ng-hide" data-ng-show="taskRemainingCount &gt; 0">0</span>
+        </a>
+    </li>
+    <li>
+        <a href="#/charts"><i class="fa fa-bar-chart-o"></i><span data-i18n="Charts">Charts</span></a>
+        <ul style="">
+            <li><a href="#/charts/morris"><i class="fa fa-caret-right"></i>Morris</a></li>
+            <li><a href="#/charts/flot"><i class="fa fa-caret-right"></i>Flot <span data-i18n="Charts">Charts</span></a></li>
+            <li><a href="#/charts/others"><i class="fa fa-caret-right"></i>Other <span data-i18n="Charts">Charts</span></a></li>
+        </ul>
+    <i class="fa fa-caret-right icon-has-ul"></i></li>
+    <li>
+        <a href="#/pages"><i class="fa fa-file-text-o"></i><span data-i18n="Pages">Pages</span></a>
+        <ul style="">
+            <li><a href="#/pages/signin"><i class="fa fa-caret-right"></i><span data-i18n="Sign in">Sign in</span></a></li>
+            <li><a href="#/pages/signup"><i class="fa fa-caret-right"></i><span data-i18n="Sign Up">Sign Up</span></a></li>
+            <li><a href="#/pages/profile"><i class="fa fa-caret-right"></i><span data-i18n="User Profile">User Profile</span></a></li>
+            <li><a href="#/pages/404"><i class="fa fa-caret-right"></i>404 <span data-i18n="Error">Error</span></a></li>
+            <li><a href="#/pages/500"><i class="fa fa-caret-right"></i>500 <span data-i18n="Error">Error</span></a></li>
+        </ul>
+    <i class="fa fa-caret-right icon-has-ul"></i></li>
+</ul><div class="slimScrollBar" style="background-color: rgb(0, 0, 0); width: 7px; position: absolute; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 1px; opacity: 0.4; top: 0px; height: 625px; display: none; background-position: initial initial; background-repeat: initial initial;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; background-color: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div></aside>
+            </div>
+
+            <div class="view-container">
+                <!-- ngView:  --><section data-ng-view="" id="content" class="animate-fade-up ng-scope" style=""><div class="page page-dashboard ng-scope" data-ng-controller="DashboardCtrl">
+
+    <!-- stats -->
+    <div class="row dashboard-stats">
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel panel-box">
+                <div class="panel-left panel-item bg-success">
+                    <i class="fa fa-rocket text-large stat-icon"></i>
+                </div>
+                <div class="panel-right panel-item bg-reverse">
+                    <p class="size-h1 no-margin">80<span class="size-h3">%</span></p>
+                    <p class="text-muted no-margin"><span data-i18n="Growth">Growth</span></p>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel panel-box">
+                <div class="panel-left panel-item bg-info">
+                    <i class="fa fa-users text-large stat-icon"></i>
+                </div>
+                <div class="panel-right panel-item bg-reverse">
+                    <p class="size-h1 no-margin">132</p>
+                    <p class="text-muted no-margin"><span data-i18n="New users">New users</span></p>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel panel-box">
+                <div class="panel-left panel-item bg-warning">
+                    <i class="fa fa-dollar text-large stat-icon"></i>
+                </div>
+                <div class="panel-right panel-item bg-reverse">
+                    <p class="size-h1 no-margin">3,760</p>
+                    <p class="text-muted no-margin"><span data-i18n="Profit">Profit</span></p>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel panel-box">
+                <div class="panel-left panel-item bg-danger">
+                    <i class="fa fa-shopping-cart text-large stat-icon"></i>
+                </div>
+                <div class="panel-right panel-item bg-reverse">
+                    <p class="size-h1 no-margin">369</p>
+                    <p class="text-muted no-margin"><span data-i18n="Sales">Sales</span></p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- end stats -->
+
+    <div class="row">
+        <div class="col-md-8">
+            <section class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> <span data-i18n="Data">Data</span></strong></div>
+                <div class="panel-body ng-scope" data-ng-controller="morrisChartCtrl">
+                    <div morris-chart="" data-data="mainData" data-type="area" data-xkey="month" data-ykeys="[&quot;xbox&quot;, &quot;will&quot;, &quot;playstation&quot;]" data-labels="[&quot;xbox&quot;, &quot;will&quot;, &quot;playstation&quot;]" data-line-colors="[&quot;#FDD761&quot;,&quot;#FF7857&quot;,&quot;#7ACBEE&quot;]" data-line-width="0" data-behave-like-line="true" data-point-size="0" class="ng-isolate-scope" style="position: relative;"><svg height="346" version="1.1" width="645" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><text x="57.5" y="310.984375" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><path fill="none" stroke="#aaaaaa" d="M70,310.984375H620" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="57.5" y="239.48828125" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;"><tspan dy="4.16015625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">150,000</tspan></text><path fill="none" stroke="#aaaaaa" d="M70,239.48828125H620" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="57.5" y="167.9921875" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;"><tspan dy="4.15625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">300,000</tspan></text><path fill="none" stroke="#aaaaaa" d="M70,167.9921875H620" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="57.5" y="96.49609375" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;"><tspan dy="4.16015625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">450,000</tspan></text><path fill="none" stroke="#aaaaaa" d="M70,96.49609375H620" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="57.5" y="25" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">600,000</tspan></text><path fill="none" stroke="#aaaaaa" d="M70,25H620" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="620" y="323.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013-09</tspan></text><text x="549.8233579145945" y="323.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013-08</tspan></text><text x="479.64671582918885" y="323.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013-07</tspan></text><text x="341.557194306294" y="323.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013-05</tspan></text><text x="203.56199622706225" y="323.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013-03</tspan></text><text x="70" y="323.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013-01</tspan></text><path fill="#f9e6aa" stroke="none" d="M70,170.85203125C87.5441605213514,178.71660156250002,122.6324815640542,196.36240300582628,140.1766420854056,202.3103125C156.02298062081977,207.68261784957627,187.7156576916481,213.0770010490283,203.56199622706225,216.13289062500002C221.08257588749785,219.51164948652828,256.1237352083691,231.43784389952157,273.6443148688047,228.04890625000002C290.622534728177,224.76487514952154,324.5789744469217,196.73127305327867,341.557194306294,189.44101562499998C359.10135482764537,181.90774961577867,394.18967587034814,175.71884458247948,411.7338363916995,168.75481249999999C428.7120562510719,162.0154266137295,462.6684959698165,139.2159864882172,479.64671582918885,134.62734375C497.19087635054024,129.8857462538422,532.2791973932431,140.835587890625,549.8233579145945,131.4338515625C567.3675184359458,122.032115234375,602.4558394786486,77.418552734375,620,59.41345312499999L620,310.984375L70,310.984375Z" fill-opacity="0.8" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.8;"></path><path fill="none" stroke="#fdd761" d="M70,170.85203125C87.5441605213514,178.71660156250002,122.6324815640542,196.36240300582628,140.1766420854056,202.3103125C156.02298062081977,207.68261784957627,187.7156576916481,213.0770010490283,203.56199622706225,216.13289062500002C221.08257588749785,219.51164948652828,256.1237352083691,231.43784389952157,273.6443148688047,228.04890625000002C290.622534728177,224.76487514952154,324.5789744469217,196.73127305327867,341.557194306294,189.44101562499998C359.10135482764537,181.90774961577867,394.18967587034814,175.71884458247948,411.7338363916995,168.75481249999999C428.7120562510719,162.0154266137295,462.6684959698165,139.2159864882172,479.64671582918885,134.62734375C497.19087635054024,129.8857462538422,532.2791973932431,140.835587890625,549.8233579145945,131.4338515625C567.3675184359458,122.032115234375,602.4558394786486,77.418552734375,620,59.41345312499999" stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="70" cy="170.85203125" r="0" fill="#fdd761" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="140.1766420854056" cy="202.3103125" r="0" fill="#fdd761" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="203.56199622706225" cy="216.13289062500002" r="0" fill="#fdd761" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="273.6443148688047" cy="228.04890625000002" r="0" fill="#fdd761" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="341.557194306294" cy="189.44101562499998" r="0" fill="#fdd761" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="411.7338363916995" cy="168.75481249999999" r="0" fill="#fdd761" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="479.64671582918885" cy="134.62734375" r="0" fill="#fdd761" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="549.8233579145945" cy="131.4338515625" r="0" fill="#fdd761" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="620" cy="59.41345312499999" r="03" fill="#fdd761" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><path fill="#fab1a0" stroke="none" d="M70,246.16125C87.5441605213514,222.44837890624999,122.6324815640542,152.74978581832625,140.1766420854056,151.30976562499998C156.02298062081977,150.00910222457625,187.7156576916481,225.29516977694345,203.56199622706225,235.198515625C221.08257588749785,246.14819712069348,256.1237352083691,244.3440372548915,273.6443148688047,234.721875C290.622534728177,225.3975724111415,324.5789744469217,173.58294761782787,341.557194306294,159.41265625C359.10135482764537,144.77002183657788,394.18967587034814,113.8383894082992,411.7338363916995,119.470171875C428.7120562510719,124.9202839395492,462.6684959698165,197.98538486168033,479.64671582918885,203.740234375C497.19087635054024,209.68691220543033,532.2791973932431,170.8043671875,549.8233579145945,166.27628124999998C567.3675184359458,161.74819531249997,602.4558394786486,167.20573046874998,620,167.51554687499998L620,310.984375L70,310.984375Z" fill-opacity="0.8" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.8;"></path><path fill="none" stroke="#ff7857" d="M70,246.16125C87.5441605213514,222.44837890624999,122.6324815640542,152.74978581832625,140.1766420854056,151.30976562499998C156.02298062081977,150.00910222457625,187.7156576916481,225.29516977694345,203.56199622706225,235.198515625C221.08257588749785,246.14819712069348,256.1237352083691,244.3440372548915,273.6443148688047,234.721875C290.622534728177,225.3975724111415,324.5789744469217,173.58294761782787,341.557194306294,159.41265625C359.10135482764537,144.77002183657788,394.18967587034814,113.8383894082992,411.7338363916995,119.470171875C428.7120562510719,124.9202839395492,462.6684959698165,197.98538486168033,479.64671582918885,203.740234375C497.19087635054024,209.68691220543033,532.2791973932431,170.8043671875,549.8233579145945,166.27628124999998C567.3675184359458,161.74819531249997,602.4558394786486,167.20573046874998,620,167.51554687499998" stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="70" cy="246.16125" r="0" fill="#ff7857" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="140.1766420854056" cy="151.30976562499998" r="0" fill="#ff7857" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="203.56199622706225" cy="235.198515625" r="0" fill="#ff7857" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="273.6443148688047" cy="234.721875" r="0" fill="#ff7857" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="341.557194306294" cy="159.41265625" r="0" fill="#ff7857" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="411.7338363916995" cy="119.470171875" r="0" fill="#ff7857" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="479.64671582918885" cy="203.740234375" r="0" fill="#ff7857" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="549.8233579145945" cy="166.27628124999998" r="0" fill="#ff7857" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="620" cy="167.51554687499998" r="03" fill="#ff7857" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><path fill="#bce2f3" stroke="none" d="M70,194.68406249999998C87.5441605213514,208.62580078124998,122.6324815640542,243.31352423199152,140.1766420854056,250.451015625C156.02298062081977,256.8977820444915,187.7156576916481,246.4745191033569,203.56199622706225,249.02109375C221.08257588749785,251.8367261346069,256.1237352083691,268.9950400504101,273.6443148688047,271.89984375C290.622534728177,274.7147275504101,324.5789744469217,272.87265945184424,341.557194306294,271.89984375C359.10135482764537,270.89460085809424,394.18967587034814,268.65048303022536,411.7338363916995,263.987609375C428.7120562510719,259.4751509989754,462.6684959698165,237.0386609887295,479.64671582918885,235.198515625C497.19087635054024,233.29703208247952,532.2791973932431,246.66172265625,549.8233579145945,249.02109375C567.3675184359458,251.38046484375,602.4558394786486,252.81038671875,620,254.073484375L620,310.984375L70,310.984375Z" fill-opacity="0.8" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.8;"></path><path fill="none" stroke="#7acbee" d="M70,194.68406249999998C87.5441605213514,208.62580078124998,122.6324815640542,243.31352423199152,140.1766420854056,250.451015625C156.02298062081977,256.8977820444915,187.7156576916481,246.4745191033569,203.56199622706225,249.02109375C221.08257588749785,251.8367261346069,256.1237352083691,268.9950400504101,273.6443148688047,271.89984375C290.622534728177,274.7147275504101,324.5789744469217,272.87265945184424,341.557194306294,271.89984375C359.10135482764537,270.89460085809424,394.18967587034814,268.65048303022536,411.7338363916995,263.987609375C428.7120562510719,259.4751509989754,462.6684959698165,237.0386609887295,479.64671582918885,235.198515625C497.19087635054024,233.29703208247952,532.2791973932431,246.66172265625,549.8233579145945,249.02109375C567.3675184359458,251.38046484375,602.4558394786486,252.81038671875,620,254.073484375" stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="70" cy="194.68406249999998" r="0" fill="#7acbee" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="140.1766420854056" cy="250.451015625" r="0" fill="#7acbee" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="203.56199622706225" cy="249.02109375" r="0" fill="#7acbee" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="273.6443148688047" cy="271.89984375" r="0" fill="#7acbee" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="341.557194306294" cy="271.89984375" r="0" fill="#7acbee" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="411.7338363916995" cy="263.987609375" r="0" fill="#7acbee" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="479.64671582918885" cy="235.198515625" r="0" fill="#7acbee" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="549.8233579145945" cy="249.02109375" r="0" fill="#7acbee" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="620" cy="254.073484375" r="03" fill="#7acbee" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle></svg><div class="morris-hover morris-default-style" style="left: 520px; top: 150px;"><div class="morris-hover-row-label">2013-09</div><div class="morris-hover-point" style="color: #FDD761">
+  xbox:
+  527,800
+</div><div class="morris-hover-point" style="color: #FF7857">
+  will:
+  301,000
+</div><div class="morris-hover-point" style="color: #7ACBEE">
+  playstation:
+  119,400
+</div></div></div>
+                </div>
+            </section> 
+        </div>
+        <div class="col-md-4">
+
+            <section class="panel panel-default">
+                <div class="panel-heading"> <strong><span class="glyphicon glyphicon-th"></span> <span data-i18n="Realtime Data">Realtime Data</span></strong> </div>
+                <div class="panel-body ng-scope" data-ng-controller="flotChartCtrl.realtime">
+                    <div data-flot-chart-realtime="" data-type="realtime" style="width: 100%; height: 345px; padding: 0px; position: relative;"><canvas class="flot-base" width="291" height="345" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 291px; height: 345px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 330px; left: 14px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 264px; left: 7px; text-align: right;">20</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 198px; left: 7px; text-align: right;">40</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 132px; left: 7px; text-align: right;">60</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 66px; left: 7px; text-align: right;">80</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 1px; left: 1px; text-align: right;">100</div></div></div><canvas class="flot-overlay" width="291" height="345" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 291px; height: 345px;"></canvas></div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+
+    <section>
+        <div class="row">
+            <div class="col-md-6">
+
+                <section class="panel panel-box">
+                    <div class="panel-left panel-item bg-warning">
+                        <i class="fa fa-sun-o text-huge"></i>
+                    </div>
+                    <div class="panel-right panel-item bg-reverse">
+                        <p class="size-h1">66º</p>
+                        <p class="text-muted">Sunny Day</p>
+                    </div>
+                </section>
+                <section class="panel panel-box">
+                    <div class="panel-left panel-item bg-reverse">
+                        <p class="size-h1">56</p>
+                        <p class="text-muted">Gifts Received</p>
+                    </div>
+                    <div class="panel-right panel-item bg-success">
+                        <i class="fa fa-heart text-huge"></i>
+                    </div>
+                </section>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> <span data-i18n="Table">Table</span></strong></div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Project</th>
+                                <th>Manager</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>TWLT</td>
+                                <td>Amery Lee</td>
+                                <td><span class="label label-info">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>A16Z</td>
+                                <td>Romayne Carlyn</td>
+                                <td><span class="label label-primary">Due</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Q300</td>
+                                <td>Marybeth Joanna</td>
+                                <td><span class="label label-success">Due</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>DARK</td>
+                                <td>Jonah Benny</td>
+                                <td><span class="label label-danger">Blocked</span></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>RVNG</td>
+                                <td>Daly Royle</td>
+                                <td><span class="label label-warning">Suspended</span></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <section class="panel panel-box">
+                            <div class="panel-top bg-facebook">
+                                <div class="divider divider"></div>
+                                <i class="fa fa-facebook size-h1"></i>
+                                <div class="divider divider"></div>
+                            </div>
+                            <div class="list-justified-container">
+                                <ul class="list-justified text-center">
+                                    <li>
+                                        <p class="size-h3">575</p>
+                                        <p class="text-muted">Followers</p>
+                                    </li>
+                                    <li>
+                                        <p class="size-h3">23</p>
+                                        <p class="text-muted">Following</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-sm-6">
+                        <section class="panel panel-box">
+                            <div class="panel-top bg-twitter">
+                                <div class="divider divider"></div>
+                                <i class="fa fa-twitter size-h1"></i>
+                                <div class="divider divider"></div>
+                            </div>
+                            <div class="list-justified-container">
+                                <ul class="list-justified text-center">
+                                    <li>
+                                        <p class="size-h3">1345</p>
+                                        <p class="text-muted">Followers</p>
+                                    </li>
+                                    <li>
+                                        <p class="size-h3">42</p>
+                                        <p class="text-muted">Following</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>                        
+                    </div>
+                </div>
+
+                <section class="panel panel-default">
+                    <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> <span data-i18n="Progress">Progress</span></strong></div>
+                    <div class="panel-body ng-scope" data-ng-controller="ProgressDemoCtrl">
+                        <p>Tasks</p>
+                        <div class="progressbar-xs progress ng-isolate-scope" value="55"><div class="progress-bar" ng-class="type &amp;&amp; 'progress-bar-' + type" ng-transclude="" style="width: 55%;"></div></div>
+                        <p>Messages</p>
+                        <div class="progressbar-xs progress ng-isolate-scope" value="43" type="success"><div class="progress-bar progress-bar-success" ng-class="type &amp;&amp; 'progress-bar-' + type" ng-transclude="" style="width: 43%;"></div></div>
+                        <p>Notifications</p>
+                        <div class="progressbar-xs progress ng-isolate-scope" value="68" type="info"><div class="progress-bar progress-bar-info" ng-class="type &amp;&amp; 'progress-bar-' + type" ng-transclude="" style="width: 68%;"></div></div>
+                        <p>Mails</p>
+                        <div class="progressbar-xs progress ng-isolate-scope" value="86" type="warning"><div class="progress-bar progress-bar-warning" ng-class="type &amp;&amp; 'progress-bar-' + type" ng-transclude="" style="width: 86%;"></div></div>
+                        <p>Bugs</p>
+                        <div class="progressbar-xs progress ng-isolate-scope" value="77" type="danger"><div class="progress-bar progress-bar-danger" ng-class="type &amp;&amp; 'progress-bar-' + type" ng-transclude="" style="width: 77%;"></div></div>
+                    </div>
+                </section>     
+            </div>
+        </div>
+    </section>
+
+</div>
+  </section>
+            </div>
+        </div>
+
+
+        <script src="scripts/vendor.js"></script>
+
+        <script src="scripts/ui.js"></script>
+
+        <script src="scripts/app.js"></script>
+    
+</body>
 
 <table>
   <thead>
