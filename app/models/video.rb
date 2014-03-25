@@ -5,8 +5,13 @@ class Video < ActiveRecord::Base
   scope :top_vids, -> {where(dead: false)}
 
   def fee
-    BigDecimal.new(revenue)
+    BigDecimal.new(revenue)/2
   end
+
+  def each_share
+    
+  end
+
 
 
 

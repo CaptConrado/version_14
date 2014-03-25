@@ -11,6 +11,11 @@ class VideosController < ApplicationController
   # GET /videos/1
   # GET /videos/1.json
   def show
+    # @testing = Claim.find(params[:ytube_id])
+    @claims = Claim.where ytube_id: @video.ytube_id
+
+
+    # .pluck(:claim_id)  
   end
 
   # GET /videos/new

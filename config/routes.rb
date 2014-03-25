@@ -1,11 +1,12 @@
 VersionFourteen::Application.routes.draw do
   
-  resources :claims
+  
 
   resources :reports
 
   resources :videos do
     collection { post :import }  
+    resources :claims
   end
 
   root "videos#index"

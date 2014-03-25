@@ -5,9 +5,16 @@
   <%= @video.title %>
 </p>
 
+<%= @video.fee %>
+<%= @claims.size %>
 <p>
   <strong>Ytube:</strong>
-  <%= @video.ytube_id %>
+  <% @video.ytube_id %>
+  http://youtu.be/hqiNL4Hn04A?t=21s
+
+
+
+  <iframe width="420" height="315" src="//www.youtube.com/embed/hqiNL4Hn04A" frameborder="0" allowfullscreen></iframe>
 </p>
 
 <p>
@@ -24,6 +31,12 @@
   <strong>Report:</strong>
   <%= @video.report %>
 </p>
+<% @claims.each do |oy| %>
+<%= oy.producer %>
+<%= oy.claim_id %>
+<% end %>
+
+
 
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>
