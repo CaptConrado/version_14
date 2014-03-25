@@ -5,8 +5,8 @@ class Report < ActiveRecord::Base
   # has_many   :line_items
   # before_save :make_items
   
-  def tester
-    Video.all[0..29]
+  def list
+    videos
   end
 
   
