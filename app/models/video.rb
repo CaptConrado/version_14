@@ -8,8 +8,12 @@ class Video < ActiveRecord::Base
     BigDecimal.new(revenue)/2
   end
 
-  def each_share
-    
+  def self.rev_total
+    oil = top_vids.to_a[0..29]
+    arr = []
+    oil.each do |pump|
+      arr.push(pump.revenue.to_f)
+    end
   end
 
 

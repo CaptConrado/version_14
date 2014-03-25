@@ -6,6 +6,14 @@ class VideosController < ApplicationController
   def index
     # @videos = Video.all
     @videos = Video.top_vids[0..29]
+    # @ = Video.top_vids[0..29]
+    sum_array = []
+    @videos.each do |one|
+      sum_array.push(one.revenue.to_f)
+    end
+    @total_rev = sum_array.inject 0, :+ 
+
+
   end
 
   # GET /videos/1

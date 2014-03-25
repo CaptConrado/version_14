@@ -1,6 +1,8 @@
 
 
-<h1>Listing videos</h1>
+
+
+<h1>Total Revenue: <%= number_to_currency(@total_rev) %></h1>
 <div class="page">
 <section class="panel panel-default">
         <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Responsive Table - Normal</strong></div>
@@ -14,8 +16,8 @@
       <th>Views</th>
       <th>Revenue</th>
       <!-- <th>Report</th> -->
-      <th></th>
-      <th></th>
+      <!-- <th></th> -->
+      <!-- <th></th> -->
       <th></th>
     </tr>
   </thead>
@@ -27,13 +29,13 @@
         <td><%= counter = counter + 1 %></td>
         <td><%= video.ytube_id %></td>
         <td><%= video.title %></td>        
-        <td><%= video.views %></td>
-        <td><%= video.revenue %></td>
+        <td><%= number_to_human(video.views) %></td>
+        <td><%= number_to_currency(video.revenue) %></td>
         <!-- <td><%= video.report %></td> -->
         <!-- <td><%= video.dead %></td> -->
         <td><%= link_to 'Show', video %></td>
-        <td><%= link_to 'Edit', edit_video_path(video) %></td>
-        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- <td><%= link_to 'Edit', edit_video_path(video) %></td> -->
+        <!-- <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>

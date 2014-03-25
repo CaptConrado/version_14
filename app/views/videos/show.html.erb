@@ -1,20 +1,76 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
   <%= @video.title %>
 </p>
+<strong>Ytube:</strong>
+  <% @video.ytube_id %>
+
+
+<div class="row dashboard-stats">
+        <!-- <div class="col-lg-2 col-sm-6">
+            <section class="panel panel-box">
+                <div class="panel-left panel-item bg-success">
+                    <i class="fa fa-rocket text-large stat-icon"></i>
+                </div>
+                <div class="panel-right panel-item bg-reverse">
+                    <p class="size-h1 no-margin">80<span class="size-h3">%</span></p>
+                    <p class="text-muted no-margin"><span data-i18n="Growth">Growth</span></p>
+                </div>
+            </section>
+        </div> -->
+
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel panel-box">
+                <div class="panel-left panel-item bg-info">
+                    <i class="fa fa-users text-large stat-icon"></i>
+                </div>
+                <div class="panel-right panel-item bg-reverse">
+                    <p class="size-h1 no-margin"><%= @claims.size %></p>
+                    <p class="text-muted no-margin"><span data-i18n="New users">Collab Claims</span></p>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-lg-4 col-sm-6">
+            <section class="panel panel-box">
+                <div class="panel-left panel-item bg-warning">
+                    <i class="fa fa-dollar text-large stat-icon"></i>
+                </div>
+                <div class="panel-right panel-item bg-reverse">
+                    <p class="size-h1 no-margin"><%= number_to_currency(@video.fee.to_f) %></p>
+                    <p class="text-muted no-margin"><span data-i18n="Profit">Shared Rev</span></p>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel panel-box">
+                <div class="panel-left panel-item bg-danger">
+                    <i class="fa fa-shopping-cart text-large stat-icon"></i>
+                </div>
+                <div class="panel-right panel-item bg-reverse">
+                    <p class="size-h1 no-margin">
+                      <% oy  = @video.fee %>
+                      <% vay = @claims.size%>
+                      <%= number_to_currency(oy/vay.to_f) %>
+                    </p>
+                    <p class="text-muted no-margin"><span data-i18n="Sales">Per Claim</span></p>
+                </div>
+            </section>
+        </div>
+    </div>
 
 <%= @video.fee %>
 <%= @claims.size %>
 <p>
-  <strong>Ytube:</strong>
-  <% @video.ytube_id %>
-  http://youtu.be/hqiNL4Hn04A?t=21s
+  
 
 
 
-  <iframe width="420" height="315" src="//www.youtube.com/embed/hqiNL4Hn04A" frameborder="0" allowfullscreen></iframe>
+  <iframe width="420" height="315" src="//www.youtube.com/embed/<%= @video.ytube_id %>" frameborder="0" allowfullscreen></iframe>
 </p>
 
 <p>
@@ -32,11 +88,52 @@
   <%= @video.report %>
 </p>
 <% @claims.each do |oy| %>
-<%= oy.producer %>
-<%= oy.claim_id %>
+  <%= oy.producer %>
+  <%= oy.claim_id %>
 <% end %>
+<div id="myfirstchart" style="height: 250px;"></div>
 
 
 
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>
+</div>
+  <div id="donut-example"></div>
+
+<script type="text/javascript">
+new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'myfirstchart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: [
+    { year: '2008', value: 20 },
+    { year: '2009', value: 10 },
+    { year: '2010', value: 5 },
+    { year: '2011', value: 5 },
+    { year: '2012', value: 20 }
+  ],
+  // The name of the data record attribute that contains x-values.
+  xkey: 'year',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['value'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Value']
+});
+
+
+</script>
+
+<script type="text/javascript">
+Morris.Donut({
+  element: 'donut-example',
+  data: [
+    {label: "Download Sales", value: 12},
+    {label: "In-Store Sales", value: 30},
+    {label: "Mail-Order Sales", value: 20}
+  ]
+});
+
+
+</script>
