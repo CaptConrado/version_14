@@ -1,13 +1,14 @@
-<h1>Listing claims</h1>
+<h1>Listing claim ID's</h1>
 
 
+
+<span class="container">
 <%= form_tag import_claims_path, multipart: true do %>
   <%= file_field_tag :file %>
-  
   <%= submit_tag "Import" %>
 <% end %>
 
-
+</span>
 <%= @claims %>
 
 
