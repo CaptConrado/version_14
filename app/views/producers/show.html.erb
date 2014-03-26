@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @producer.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @producer.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @producer.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @producer.phone %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @producer.twitter %>
+</p>
+
+<p>
+  <strong>Collab:</strong>
+  <%= @producer.collab %>
+</p>
+
+<%= link_to 'Edit', edit_producer_path(@producer) %> |
+<%= link_to 'Back', producers_path %>

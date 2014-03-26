@@ -1,6 +1,7 @@
 class Video < ActiveRecord::Base
   self.primary_key = "ytube_id"
   has_many :claims
+  has_many :producers, through: :claims
 
   scope :top_vids, -> {where(dead: false)}
 

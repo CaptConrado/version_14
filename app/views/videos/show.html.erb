@@ -83,12 +83,9 @@
   <%= @video.revenue %>
 </p>
 
-<p>
-  <strong>Report:</strong>
-  <%= @video.report %>
-</p>
+
 <% @claims.each do |oy| %>
-  <%= oy.producer %>
+  <%= oy.producer.name %>
   <%= oy.claim_id %>
 <% end %>
 <div id="myfirstchart" style="height: 250px;"></div>

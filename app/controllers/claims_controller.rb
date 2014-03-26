@@ -1,24 +1,24 @@
 class ClaimsController < ApplicationController
   before_action :set_claim, only: [:show, :edit, :update, :destroy]
 
-  # GET /claims
-  # GET /claims.json
   def index
-    @claims = Claim.all
+    #This grabs all of the unique ID's
+    @claims = Claim.all.pluck(:producer_id).uniq
   end
 
-  # GET /claims/1
-  # GET /claims/1.json
   def show
   end
 
-  # GET /claims/new
   def new
     @claim = Claim.new
   end
 
-  # GET /claims/1/edit
   def edit
+  end
+
+   def import
+    Claim.import(params[:file])
+    redirect_to '/claims', notice: "Claims imported."
   end
 
   # POST /claims
@@ -51,8 +51,6 @@ class ClaimsController < ApplicationController
     end
   end
 
-  # DELETE /claims/1
-  # DELETE /claims/1.json
   def destroy
     @claim.destroy
     respond_to do |format|
@@ -69,6 +67,6 @@ class ClaimsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def claim_params
-      params.require(:claim).permit(:title, :claim_id, :ytube_id, :producer)
+      params.require(:claim).permit(:title, :claim_id, :ytube_id, :producer, :producer_id)
     end
 end

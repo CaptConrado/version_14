@@ -1,32 +1,15 @@
 <h1>Listing claims</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Claim</th>
-      <th>Ytube</th>
-      <th>Producer</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @claims.each do |claim| %>
-      <tr>
-        <td><%= claim.title %></td>
-        <td><%= claim.claim_id %></td>
-        <td><%= claim.ytube_id %></td>
-        <td><%= claim.producer %></td>
-        <td><%= link_to 'Show', claim %></td>
-        <td><%= link_to 'Edit', edit_claim_path(claim) %></td>
-        <td><%= link_to 'Destroy', claim, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= form_tag import_claims_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  
+  <%= submit_tag "Import" %>
+<% end %>
+
+
+<%= @claims %>
+
 
 <br>
 

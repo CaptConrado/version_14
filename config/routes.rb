@@ -1,8 +1,12 @@
 VersionFourteen::Application.routes.draw do
 
-  resources :reports
-  resources :claims
+  resources :producers
 
+  resources :reports
+  
+  resources :claims do
+    collection { post :import }
+  end
   resources :videos do
     collection { post :import }  
   end
