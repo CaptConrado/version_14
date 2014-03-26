@@ -85,8 +85,10 @@
 
 
 <% @claims.each do |oy| %>
-  <%= oy.producer.name %>
-  <%= oy.claim_id %>
+  <p>
+    <%= oy.producer.name %>
+    <%= oy.claim_id %>
+  </p>
 <% end %>
 <div id="myfirstchart" style="height: 250px;"></div>
 

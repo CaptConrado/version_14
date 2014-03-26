@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Listing producers</h1>
 
 <table>
@@ -18,6 +19,7 @@
   <tbody>
     <% @producers.each do |producer| %>
       <tr>
+        <td><%= producer.id %></td>
         <td><%= producer.name %></td>
         <td><%= producer.email %></td>
         <td><%= producer.address %></td>
@@ -35,3 +37,4 @@
 <br>
 
 <%= link_to 'New Producer', new_producer_path %>
+</div>

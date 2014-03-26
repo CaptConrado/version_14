@@ -11,8 +11,8 @@ class Claim < ActiveRecord::Base
 
 
   def self.import file
-    cid = 31
-    CSV.foreach(file.path, :headers => true, :encoding => 'utf-8') do |row|
+    cid = 10
+    CSV.foreach(file.path, :headers => true, :encoding => 'windows-1251:utf-8') do |row|
       Claim.create(
         # title:           row[3],
         ytube_id:        row[1],
@@ -24,3 +24,5 @@ class Claim < ActiveRecord::Base
 end
 
 # Claim.where('ytube_id == #{kay}').pluck(:claim_id)
+
+

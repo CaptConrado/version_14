@@ -9,8 +9,12 @@
 <% end %>
 
 </span>
-<%= @claims %>
-
+<%= @claims.each do |wh| %>
+  <p>
+    <%= Producer.find(wh).name %>
+    <%= Producer.find(wh).claims.size %>
+   </p>
+<% end %>
 
 <br>
 
